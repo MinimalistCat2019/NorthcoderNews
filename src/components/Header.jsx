@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className="App-header">
-            Northcoder News
+            <h1>Northcoder News</h1>
+             <p className="loggedInUser">You are logged in as {props.logged_in_user}</p>
         </header>
+        
     );
 };
 

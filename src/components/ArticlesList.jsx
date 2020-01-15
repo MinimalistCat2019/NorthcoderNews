@@ -16,6 +16,7 @@ const ArticlesList = (props) => {
                     time={article.created_at}
                     commentCount={article.comment_count}
                     manageClick={props.manageClick}
+                    logged_in_user={props.logged_in_user}
                     />
                 ))}
             </ul>

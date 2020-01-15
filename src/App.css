@@ -6,6 +6,7 @@
     text-align: center;
   }
 }
+
 .App {
   background-color: #696773;
   text-align: center;
@@ -33,8 +34,8 @@
 .App-header {
   background-color: #ED254E;
   grid-area: header;
-  min-height: 100px;
-  max-height: 100px;
+  min-height: 200px;
+  max-height: 200px;
   display: grid;
   flex-direction: row;
   align-items: center;

@@ -23,4 +23,4 @@ function ArticleCard(props) {
 
 export default ArticleCard;
 
- {/* <Link to={`/articles/${article.article_id}`}>{article.title}</Link> */}
+ 
