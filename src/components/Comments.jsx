@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentCard from './CommentCard';
 import axios from 'axios';
+import CommentAdder from './CommentAdder';
 
 class Comments extends Component {
     state = {
@@ -19,9 +20,10 @@ class Comments extends Component {
         return (
             <main className="Comments">
               <h3>Comments</h3>
+              <CommentAdder logged_in_user={this.props.logged_in_user} article_id={this.props.id}/>
               <ul>
                   {this.state.comments.map((comment) => {
-                     return <CommentCard key={comment.comment_id} logged_in_user={this.props.logged_in_user} comment_id={comment.comment_id} author={comment.author} votes={comment.votes} body={comment.body}/>
+                     return <CommentCard key={comment.comment_id} logged_in_user={this.props.logged_in_user} comment_id={comment.comment_id} author={comment.author} votes={comment.votes} body={comment.body} created_at={comment.created_at}/>
                   })} 
               </ul>
             </main>
