@@ -7,8 +7,9 @@ const CommentCard = (props) => {
             <li>
                 <p>{props.author}  |  {props.votes} votes  |  created at {props.created_at}</p>
                 <main>{props.body}</main>
-                <p>Reply as {props.logged_in_user}</p>
-                <RemoveCommentButton removeComment={props.removeComment} comment_id={props.comment_id}/>
+               {props.logged_in_user === props.author && 
+                <RemoveCommentButton removeComment={props.removeComment} comment_id={props.comment_id} comment_author={props.author} logged_in_user={props.logged_in_user}/>
+               }
             </li>
         </main>
         

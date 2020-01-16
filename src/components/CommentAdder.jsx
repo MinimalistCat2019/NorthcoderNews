@@ -52,10 +52,6 @@ class CommentAdder extends Component {
         })
         });
       }
-    
-    //   handleChange = (event) => {
-    //   this.setState({body: event.target.value })
-    // }
 }
 
 

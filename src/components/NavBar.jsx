@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from '@reach/router'
 
 const NavBar = () => {
     return (
         <div>
             <nav className="NavBar">
-                Home Topics Login 
+            <Link to={`/`}>Home </Link>
             </nav>
         </div>
     );

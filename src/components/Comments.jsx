@@ -15,8 +15,7 @@ class Comments extends Component {
     }
 
     render() {
-        console.log(this.state.comments)
-        const {comments} = this.state
+        const { comments } = this.state
         if (comments.isLoading) return <p>Fetching comments...</p>
         return (
             <main className="Comments">
@@ -26,17 +25,10 @@ class Comments extends Component {
                   {this.state.comments.map((comment) => {
                      return <CommentCard key={comment.comment_id} logged_in_user={this.props.logged_in_user} comment_id={comment.comment_id} author={comment.author} votes={comment.votes} body={comment.body} created_at={comment.created_at} removeComment={this.removeComment}/>
                   })} 
-                  
               </ul>
             </main>
         );
     }
-
-    componentDidUpdate = (prevProps, currentState) => {
-        if (this.state.p !== currentState.p) {
-          this.getComments();
-        }
-      };
       
     addNewComment = newComment => {
         this.setState(currentState => {

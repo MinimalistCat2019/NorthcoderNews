@@ -3,13 +3,13 @@ import './App.css';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Homepage from './components/Homepage';
-import {Router} from '@reach/router';
+import { Router } from '@reach/router';
 import SingleArticle from './components/SingleArticle';
 import TopicPage from './components/TopicPage';
 import ErrorDisplay from './components/ErrorDisplay';
 
 class App extends Component {
-  state = {logged_in_user: 'jessjelly'}
+  state = {logged_in_user: 'grumpy19'}
   render() {
     if(this.state.isLoading) {
       return <p>Loading page...</p>
