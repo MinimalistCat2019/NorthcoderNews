@@ -3,9 +3,8 @@ import axios from "axios";
 const request = axios.create({
   baseURL: `https://paula-nc-news.herokuapp.com/api`
 });
-// const baseUrl = `https://paula-nc-news.herokuapp.com/api`;
 
-export const addComment = (article_id, author, commentBody) => {
+export const postComment = (article_id, author, commentBody) => {
   console.log(article_id);
   console.log(author);
   console.log(commentBody);
@@ -15,12 +14,23 @@ export const addComment = (article_id, author, commentBody) => {
       body: commentBody
     })
     .then(({ data }) => {
-      // console.log(data.comment)
       return data.comment;
     });
 };
+
+export const removeCommentById = (comment_id) => {
+  return request
+  .delete(`/comments/${comment_id}`)
+}
 
 //   export const getSingleArticle = (article_id) => {
 //       return request
 //       .get(`/articles/${article_id}`)
 //   }
+
+// export const getComments = (article_id) => {
+//   // console.log(this.props)
+//   return request
+//   .get(`/articles/${article_id}/comments`).then(({data}) => {
+//       this.setState({comments: data.comments, isLoading: false})
+//   });

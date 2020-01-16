@@ -37,14 +37,14 @@ class CommentAdder extends Component {
 
     handleSubmit = (event) => {
       event.preventDefault();
-      api.addComment(
+      api.postComment(
         this.props.article_id, 
         this.props.logged_in_user, 
         this.state.body
         )
       .then(request => {
         this.setState({body: '', err: null, username: ''});
-        this.props.addComment(request);
+        this.props.addNewComment(request);
       })
       .catch(err => {
         this.setState({
