@@ -1,59 +1,61 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import * as api from '../api';
 
 class CommentAdder extends Component {
-    state = { request: {
-        username: '', 
-        body: ''
-        }
+    state = { 
+        body: '',
+        err: null, 
+        username: ''
     }
 
     render() {
-        return (
+      const { err } = this.state;
+      if(!this.props.logged_in_user) {
+        return <p>Please log in to post a comment</p>
+      }
+      return (
         <form onSubmit={this.handleSubmit}>
-            <label>
-                Comment as {this.props.logged_in_user}
-                <input onChange={this.handleChange} value={this.state.body} />
-            </label>
-            <button type="submit">Add Comment</button>
+          <label>
+              Comment as {this.props.logged_in_user}:
+              <input 
+              onChange={this.handleInput} 
+              value={this.state.body} 
+              name="body" 
+              required={true}>
+              </input>
+          </label>
+          <button className="addCommentButton">Add Comment</button>
+        
         </form>
         )
     }
 
+    handleInput = (event) => {
+      const {name, value} = event.target;
+      this.setState({[name]: value});
+    };
+
     handleSubmit = (event) => {
-        event.preventDefault();
-        if (!this.state.body) {
-          return;
-        }
-
-        const newComment = {
-          body: this.state.body,
-          username: this.props.logged_in_user,
-        };
-
-        this.setState(state => ({
-          body: state.body.concat(newComment)
-        }));
-
-        axios.post(`/api/articles/${this.props.id}/comments`, {
-            username: `${this.props.logged_in_user}`,
-            body: `${this.state.body}`
-          })
-          .then(function (response) {
-            console.log(response.data);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-
-        this.setState(state => ({
-            body: '', username: ''
-        }))
+      event.preventDefault();
+      api.addComment(
+        this.props.article_id, 
+        this.props.logged_in_user, 
+        this.state.body
+        )
+      .then(request => {
+        this.setState({body: '', err: null, username: ''});
+        this.props.addComment(request);
+      })
+      .catch(err => {
+        this.setState({
+          err: {status: err.response.status, msg: err.response.data.msg}
+        })
+        });
       }
-
-    handleChange = (event) => {
-        this.setState({body: event.target.value })
-    }
+    
+    //   handleChange = (event) => {
+    //   this.setState({body: event.target.value })
+    // }
 }
 
 

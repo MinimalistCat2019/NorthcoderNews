@@ -22,6 +22,7 @@ class SingleArticle extends Component {
                 <p>{`Author: ${article.author}`} | {`${article.votes} votes`}  |  {`${article.comment_count} comments`}</p>
                 <p>{`${article.body}`}</p>
                 <Comments id={this.state.article.article_id}  logged_in_user={this.props.logged_in_user}/> 
+            
               
             </main>
         );
