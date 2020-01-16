@@ -23,18 +23,18 @@ export const removeCommentById = (comment_id) => {
   .delete(`/comments/${comment_id}`)
 }
 
-export const sendCommentVote = (comment_id, newVote) => {
+export const sendCommentVote = (comment_id, voteChange) => {
   return request
   .patch(`/comments/${comment_id}`, {
-    inc_votes: newVote
+    inc_votes: voteChange
   });
 }
 
-export const sendArticleVote = (article_id, newVote) => {
-  console.log(newVote)
+export const sendArticleVote = (article_id, voteChange) => {
+  console.log(voteChange)
   return request
   .patch(`/articles/${article_id}`, {
-    inc_votes: newVote
+    inc_votes: voteChange
   })
 }
 //   export const getSingleArticle = (article_id) => {

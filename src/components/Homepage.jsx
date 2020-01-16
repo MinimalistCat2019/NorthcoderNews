@@ -17,6 +17,12 @@ class Homepage extends Component {
         });
     }; 
 
+    componentDidUpdate() {
+        axios.get(`https://paula-nc-news.herokuapp.com/api/articles`).then(data => {
+            const articlesArray = data.data;
+            this.setState({ articles: articlesArray, isLoading: false });
+        });
+    }
     render() {
         if (this.state.isLoading) return <p>Fetching list of articles...</p>
         return (

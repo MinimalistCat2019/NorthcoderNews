@@ -11,6 +11,10 @@ class SingleArticle extends Component {
         this.getSingleArticle()
     }
 
+    componentDidUpdate() {
+        this.getSingleArticle()
+    }
+    
     render() {
         const { article } = this.state;
         if (this.state.isLoading) {
@@ -23,11 +27,10 @@ class SingleArticle extends Component {
                 <VoteUpdater article_id={article.article_id}votes={article.votes}/>
                 <p>{`${article.body}`}</p>
                 <Comments id={this.state.article.article_id}  logged_in_user={this.props.logged_in_user}/> 
-            
-              
             </main>
         );
     }
+
 
     getSingleArticle = () => {
         return axios.get(`https://paula-nc-news.herokuapp.com/api/articles/${this.props.article_id}`).then(({data}) => {

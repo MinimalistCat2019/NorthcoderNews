@@ -2,13 +2,13 @@
   .App {
     display:flex;
     flex-direction: column;
-    background-color:  #696773;
+    background-color:  mintcream;
     text-align: center;
   }
 }
 
 .App {
-  background-color: #696773;
+  background-color: mintcream;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 7fr;
@@ -19,6 +19,35 @@
   ;
 }
 
+.commentCard {
+  background-color: dimgray;
+  color: mintcream;
+}
+
+.articlesList {
+  background-color: mintcream;
+  color: #011936;
+}
+
+.articleCard {
+  background-color:  mintcream;
+  color: #011936;
+
+}
+
+.SingleArticle {
+  display: flex;
+  flex-direction: column;
+}
+.upvote {
+  background-color: #F9DC5C;
+  color: #011936;
+}
+
+.downvote {
+  background-color: #ED254E;
+  color: mintcream;
+}
 .NavBar {
   background-color: #F9DC5C;
   grid-area: sidebar;

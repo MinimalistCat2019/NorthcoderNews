@@ -14,6 +14,9 @@ class Comments extends Component {
         this.getComments()
     }
 
+    componentDidUpdate() {
+      this.getComments()
+    }
     render() {
         const { comments } = this.state
         if (comments.isLoading) return <p>Fetching comments...</p>

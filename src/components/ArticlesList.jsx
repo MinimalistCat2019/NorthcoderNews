@@ -4,7 +4,7 @@ import ArticleCard from './ArticleCard';
 
 const ArticlesList = (props) => {
     return (
-        <section className="main">
+        <section className="articlesList">
             <h2>Articles</h2>
             <ul>
                 {props.articlesData && props.articlesData.articles.map(article => (
@@ -13,6 +13,7 @@ const ArticlesList = (props) => {
                     articleTitle={article.title}
                     author={article.author} 
                     topic={article.topic}
+                    votes={article.votes}
                     time={article.created_at}
                     commentCount={article.comment_count}
                     manageClick={props.manageClick}

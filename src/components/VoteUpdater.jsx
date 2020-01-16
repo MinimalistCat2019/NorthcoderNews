@@ -9,44 +9,50 @@ class VoteUpdater extends Component {
     }
 
     render() {
-        const {differenceInVote} = this.state;
+        const {differenceInVotes} = this.state;
         return (
             <div>
-                <button className={`${differenceInVote < 0 ? "notActiveButton" : null}`}onClick={() => {
-                this.updateVotes(1)
-                }}> Vote Up
-                </button>
-                <button className={`${differenceInVote > 0 ? "notActiveButton" : null}`} onClick={() => {this.updateVotes(-1)}}> Vote Down
-                </button>
+                {differenceInVotes <= 0 &&
+                    <button className="upvote"
+                    onClick={() => {
+                    this.updateVotes(1)
+                    }}> Vote Up
+                    </button>}
+                {differenceInVotes >=0 && 
+                    <button className="downvote" onClick={() => {this.updateVotes(-1)}}> Vote Down
+                    </button> 
+                }
+                
             </div>
         );
     }
 
-    updateVotes = newVote => {
+    updateVotes = voteChange => {
+        console.log(this.state.differenceInVotes)
         this.setState(currentState => {
           return {
-            differenceInVotes: currentState.differenceInVotes + newVote,
+            differenceInVotes: currentState.differenceInVotes + voteChange,
             err: null
           };
         });
-        (this.props.article_id ? this.updateArticleVotes(this.props.article_id, newVote) : this.updateCommentVotes(this.props.comment_id, newVote)
+        (this.props.article_id ? this.updateArticleVotes(this.props.article_id, voteChange) : this.updateCommentVotes(this.props.comment_id, voteChange)
         ).catch(err => {
           this.setState(currentState => {
             return {
               err: { status: err.response.status, msg: err.response.data },
-              differenceInVotes: currentState.differenceInVotes - newVote,
+              differenceInVotes: currentState.differenceInVotes - voteChange,
               votes: false
             };
           });
         });
       };
 
-      updateCommentVotes = (comment_id, newVote) => {
-          return api.sendCommentVote(comment_id, newVote)
+      updateCommentVotes = (comment_id, voteChange) => {
+          return api.sendCommentVote(comment_id, voteChange)
       }
 
-      updateArticleVotes = (article_id, newVote) => {
-          return api.sendArticleVote(article_id, newVote)
+      updateArticleVotes = (article_id, voteChange) => {
+          return api.sendArticleVote(article_id, voteChange)
       }
 }
 
