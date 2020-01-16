@@ -23,6 +23,20 @@ export const removeCommentById = (comment_id) => {
   .delete(`/comments/${comment_id}`)
 }
 
+export const sendCommentVote = (comment_id, newVote) => {
+  return request
+  .patch(`/comments/${comment_id}`, {
+    inc_votes: newVote
+  });
+}
+
+export const sendArticleVote = (article_id, newVote) => {
+  console.log(newVote)
+  return request
+  .patch(`/articles/${article_id}`, {
+    inc_votes: newVote
+  })
+}
 //   export const getSingleArticle = (article_id) => {
 //       return request
 //       .get(`/articles/${article_id}`)

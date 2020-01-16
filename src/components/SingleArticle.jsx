@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Comments from './Comments';
+import VoteUpdater from './VoteUpdater';
 
 
 class SingleArticle extends Component {
@@ -16,10 +17,10 @@ class SingleArticle extends Component {
             return <p>Fetching article...</p>
         }
         return (
-
             <main className="SingleArticle">
                 <h2>{`${article.title}`}</h2>
                 <p>{`Author: ${article.author}`} | {`${article.votes} votes`}  |  {`${article.comment_count} comments`}</p>
+                <VoteUpdater article_id={article.article_id}votes={article.votes}/>
                 <p>{`${article.body}`}</p>
                 <Comments id={this.state.article.article_id}  logged_in_user={this.props.logged_in_user}/> 
             

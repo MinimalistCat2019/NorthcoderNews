@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from '@reach/router'
-import NavBar from './NavBar';
 
 const Header = (props) => {
     return (
