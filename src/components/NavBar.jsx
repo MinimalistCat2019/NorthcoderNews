@@ -20,11 +20,10 @@ class NavBar extends Component {
         if (this.state.isLoading === true) return <p>Loading...</p>
         return (
             <div>
-
-            <nav className="NavBar">
+            <nav className="navbar">
             <Link to={`/`}><h4>Home</h4></Link>
             {this.state.topics.map(topic => (
-            <Link to={`/${topic.slug}`} key={topic.slug}>{topic.slug}</Link>
+            <Link to={`/${topic.slug}`} key={topic.slug} className="topic-slug"><h4>{topic.slug}</h4></Link>
             ))}
             </nav>
             </div>

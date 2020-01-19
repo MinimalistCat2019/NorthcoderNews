@@ -21,10 +21,10 @@ class SingleArticle extends Component {
             return <p>Fetching article...</p>
         }
         return (
-            <main className="SingleArticle">
+            <main className="single-article">
                 <h2>{`${title}`}</h2>
                 <p>{`Author: ${author}`} | {`${votes} votes`}  |  {`${comment_count} comments`}</p>
-                <VoteUpdater article_id={article_id}votes={votes}/>
+                <VoteUpdater article_id={article_id} votes={votes}/>
                 <p>{`${body}`}</p>
                 <Comments id={article_id}  logged_in_user={this.props.logged_in_user}/> 
             </main>

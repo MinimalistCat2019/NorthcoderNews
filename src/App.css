@@ -1,44 +1,92 @@
-@media screen and (max-width: 500px) {
-  .App {
-    display:flex;
-    flex-direction: column;
-    background-color:  mintcream;
-    text-align: center;
-  }
-}
-
-.App {
-  background-color: mintcream;
-  text-align: center;
-  display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-template-rows: 1fr 7fr;
-  grid-template-areas:
-    'header header'
-    'sidebar main'
-  ;
-}
-
-.commentCard {
-  background-color: dimgray;
+main, header, aside {
+  margin: 10px;
+  padding: rem-calc(10);
+  border: 1px solid #ED254E;
   color: mintcream;
 }
 
-.articlesList {
-  background-color: mintcream;
+main {
+  background: mintcream;
+  color: #011936
+}
+
+header {
+  background: #ED254E;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #F4FFFD;
+}
+
+.navbar {
+  background: #F9DC5C;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #F4FFFD;
+}
+
+.homepage {
+  background: mintcream;
+  color: #ED254E;
+}
+
+.topic-slug {
+  color:  #011936;
+  margin: 20px;
+  padding: rem-calc(20);
+}
+
+.topic-page {
+  background: mintcream;
+  color: #ED254E;
+}
+
+.single-article {
+  background: mintcream;
   color: #011936;
 }
 
-.articleCard {
+@media (min-width: 500px) {
+  .main {
+    display:flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    background-color:  mintcream;
+    /* text-align: center; */
+  }
+}
+
+@media (max-width: 500px) {
+  .main, header, aside, .navbar, .homepage, .topic-slug, .topic-page, .single-article {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* .App {
+  background-color: mintcream;
+  text-align: center;
+  display: flex;
+} */
+/* /*  */
+.comment-card {
+  background-color:mintcream;
+  color:  #011936;
+}
+
+.article-card {
   background-color:  mintcream;
   color: #011936;
 
-}
+} */
 
-.SingleArticle {
+/* .SingleArticle {
   display: flex;
   flex-direction: column;
-}
+} */
+
 .upvote {
   background-color: #F9DC5C;
   color: #011936;
@@ -48,19 +96,8 @@
   background-color: #ED254E;
   color: mintcream;
 }
-.NavBar {
-  background-color: #F9DC5C;
-  grid-area: sidebar;
-  min-height: 20px;
-  display: grid;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #F4FFFD
-}
 
-.App-header {
+/* .App-header {
   background-color: #ED254E;
   grid-area: header;
   min-height: 200px;
@@ -71,7 +108,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #F4FFFD;
-}
+} */
 
 
 

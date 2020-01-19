@@ -16,15 +16,19 @@ class App extends Component {
       return <p>Loading page...</p>
     }
     return (
-      <div className="App">
-      <Header logged_in_user={this.state.logged_in_user}/>
-      <NavBar path='/' />
-      <Router >
-        <Homepage path='/' logged_in_user={this.state.logged_in_user} />
-        <SingleArticle path='/articles/:article_id' logged_in_user={this.state.logged_in_user} />
-        <TopicPage path='/:topic'/ >
-      </Router>
-      </div>
+      <main>
+          <header>
+              <Header logged_in_user={this.state.logged_in_user}/>
+          </header>
+          <aside className="sidebar">
+              <NavBar path='/' />
+          </aside>
+          <Router>
+              <Homepage path='/' logged_in_user={this.state.logged_in_user} />
+              <SingleArticle path='/articles/:article_id' logged_in_user={this.state.logged_in_user} />
+              <TopicPage path='/:topic'/ >
+          </Router>
+      </main>
     );
     }
   }

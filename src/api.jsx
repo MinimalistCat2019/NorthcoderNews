@@ -53,7 +53,6 @@ export const getAllTopics = () => {
 }
 
 export const getArticles = (topic, sort_by) => {
-  console.log(topic, sort_by)
   return request
     .get(`/articles`, {
       params: {

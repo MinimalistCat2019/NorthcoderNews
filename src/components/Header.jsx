@@ -1,11 +1,14 @@
 import React from 'react';
-import NavBar from './NavBar';
+
 
 const Header = (props) => {
     return (
-        <header className="App-header">
+       
+        <header>
             <h1>Northcoder News</h1>
+            <p>Welcome, {props.logged_in_user}</p>
         </header>
+       
         
     );
 };

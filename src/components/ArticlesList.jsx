@@ -13,7 +13,8 @@ class ArticlesList extends Component {
   };
 
   componentDidMount() {
-    const { topic, sort_by } = this.state;
+    const { sort_by } = this.state;
+    const { topic } = this.props;
     this.displayArticles(topic, sort_by);
   }
 
