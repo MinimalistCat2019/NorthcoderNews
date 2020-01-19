@@ -7,7 +7,8 @@ import * as api from '../api';
 class Comments extends Component {
     state = {
         comments: [],
-        isLoading: true
+        isLoading: true,
+        err: null
     }
 
     componentDidMount() {

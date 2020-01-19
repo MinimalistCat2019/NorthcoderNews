@@ -11,7 +11,7 @@ class VoteUpdater extends Component {
     render() {
         const {differenceInVotes} = this.state;
         return (
-            <div>
+            <section>
                 {differenceInVotes <= 0 &&
                     <button className="upvote"
                     onClick={() => {
@@ -22,13 +22,11 @@ class VoteUpdater extends Component {
                     <button className="downvote" onClick={() => {this.updateVotes(-1)}}> Vote Down
                     </button> 
                 }
-                
-            </div>
+            </section>
         );
     }
 
     updateVotes = voteChange => {
-        console.log(this.state.differenceInVotes)
         this.setState(currentState => {
           return {
             differenceInVotes: currentState.differenceInVotes + voteChange,

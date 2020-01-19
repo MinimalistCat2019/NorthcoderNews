@@ -5,9 +5,6 @@ const request = axios.create({
 });
 
 export const postComment = (article_id, author, commentBody) => {
-  console.log(article_id);
-  console.log(author);
-  console.log(commentBody);
   return request
     .post(`/articles/${article_id}/comments/`, {
       username: author,
@@ -31,16 +28,49 @@ export const sendCommentVote = (comment_id, voteChange) => {
 }
 
 export const sendArticleVote = (article_id, voteChange) => {
-  console.log(voteChange)
   return request
   .patch(`/articles/${article_id}`, {
     inc_votes: voteChange
   })
 }
-//   export const getSingleArticle = (article_id) => {
-//       return request
-//       .get(`/articles/${article_id}`)
-//   }
+
+export const filterByTopic = (topic) => {
+  return request
+  .get(`/articles?`, {
+    params: {
+      topic: topic
+    }
+  })
+}
+
+export const getAllTopics = () => {
+  return request
+  .get(`/topics`)
+  .then(({ data }) => {
+    console.log(data)
+    return data;
+  });
+
+}
+
+export const getArticles = (topic, sort_by, order) => {
+  if (!topic && !sort_by && !order) {
+    return request
+    .get(`/articles`)
+  } return request
+    .get(`/articles?`, {
+      params: {
+        topic: topic,
+        sort_by: sort_by,
+        order: order
+      }
+    });
+}
+
+export const getSingleArticle = (article_id) => {
+  return request
+  .get(`/articles/${article_id}`)
+  }
 
 // export const getComments = (article_id) => {
 //   // console.log(this.props)

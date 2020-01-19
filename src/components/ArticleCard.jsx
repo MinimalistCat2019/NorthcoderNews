@@ -3,24 +3,21 @@ import { Link } from '@reach/router';
 import VoteUpdater from './VoteUpdater';
 
 function ArticleCard(props) {
-    const handleClick = (event) => {
-        props.manageClick(props.article_id)
-    }
+    // const handleClick = (event) => {
+    //     props.manageClick(props.article_id)
+    // }
     return (
-        <div>
-        <button onClick={handleClick}> 
-            <li className="articleCard">
-                <p>Topic: {props.topic}</p>
-                <Link to={`/articles/${props.article_id}`}>
-                <h3>{props.articleTitle}</h3>
+        <section className="article-card" > 
+            <section className="articleCard">
+                <Link to={`/articles/${props.article.article_id}`}>
+                <h3>{props.article.title}</h3>
                 </Link>
-                <p>{props.votes} votes</p>
-                <VoteUpdater article_id={props.article_id} votes={props.votes} />
-                <p>Posted by: {props.author} at {props.time}</p>
-                <p>{props.commentCount} comments</p>
-            </li>
-        </button>
-        </div>
+                <p>{props.article.votes} votes</p>
+                <VoteUpdater article_id={props.article.article_id} votes={props.article.votes} />
+                <p>Posted by: {props.article.author} at {props.article.created_at}</p>
+                <p>{props.article.commentCount} comments</p>
+            </section>
+        </section>
     );
 };
 
