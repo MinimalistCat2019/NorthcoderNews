@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import * as api from '../api';
 
-const NavBar = (props) => {
-    const topicsArray = props.topics;
+class NavBar extends Component {
     
-    return (
-        <div>
+    state = {
+        topics: [], isLoading: true
+    }
+
+    componentDidMount() {
+        api.getAllTopics()
+        .then((data) => {
+
+            this.setState({topics: data.topics, isLoading: false})
+        })
+    }
+
+    render() {
+        if (this.state.isLoading === true) return <p>Loading...</p>
+        return (
+            <div>
+
             <nav className="NavBar">
             <Link to={`/`}><h4>Home</h4></Link>
-            {topicsArray.map(topic => (
-            <Link to={`/${topic}`} key={topic}>{topic}</Link>
+            {this.state.topics.map(topic => (
+            <Link to={`/${topic.slug}`} key={topic.slug}>{topic.slug}</Link>
             ))}
             </nav>
-        </div>
-    );
-};
-
-
-
+            </div>
+        );
+    }
+}
 
 export default NavBar;
+
+
+
+

@@ -47,24 +47,20 @@ export const getAllTopics = () => {
   return request
   .get(`/topics`)
   .then(({ data }) => {
-    console.log(data)
     return data;
   });
 
 }
 
-export const getArticles = (topic, sort_by, order) => {
-  if (!topic && !sort_by && !order) {
-    return request
-    .get(`/articles`)
-  } return request
-    .get(`/articles?`, {
+export const getArticles = (topic, sort_by) => {
+  console.log(topic, sort_by)
+  return request
+    .get(`/articles`, {
       params: {
         topic: topic,
-        sort_by: sort_by,
-        order: order
+        sort_by: sort_by
       }
-    });
+    })
 }
 
 export const getSingleArticle = (article_id) => {

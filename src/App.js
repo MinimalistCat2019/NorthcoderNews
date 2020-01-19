@@ -9,7 +9,7 @@ import ErrorDisplay from './components/ErrorDisplay';
 import Homepage from './components/Homepage';
 
 class App extends Component {
-  state = {logged_in_user: 'grumpy19', topics: ['coding', 'cooking', 'football'] }
+  state = {logged_in_user: 'grumpy19' }
   
   render() {
     if(this.state.isLoading) {
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
       <Header logged_in_user={this.state.logged_in_user}/>
-      <NavBar path='/' topics={this.state.topics}/>
+      <NavBar path='/' />
       <Router >
         <Homepage path='/' logged_in_user={this.state.logged_in_user} />
         <SingleArticle path='/articles/:article_id' logged_in_user={this.state.logged_in_user} />

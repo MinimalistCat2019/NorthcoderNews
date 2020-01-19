@@ -1,66 +1,67 @@
 import React, { Component } from "react";
-import * as api from '../api';
+import * as api from "../api";
 import ArticleCard from "./ArticleCard";
 import ErrorDisplay from "./ErrorDisplay";
 import Sorter from "./Sorter";
 
-
 class ArticlesList extends Component {
-    state = { 
-        articles: [], 
-        isLoading: true, 
-        order: null,
-        sort_by: null,
-        err: null
-    };
+  state = {
+    articles: [],
+    isLoading: true,
+    sort_by: null,
+    err: null
+  };
 
-    componentDidMount() {
-        const {topic, order, sort_by} = this.state
-        this.displayArticles(topic, order, sort_by)
-        
-    }; 
+  componentDidMount() {
+    const { topic, sort_by } = this.state;
+    this.displayArticles(topic, sort_by);
+  }
 
-    componentDidUpdate(prevProps, currentState) {
-        const {topic, order, sort_by} = this.props;
-        
-        prevProps !== currentState &&
-        this.displayArticles(topic, order, sort_by)
-        
+  componentDidUpdate(prevProps, prevState) {
+   
+    const { topic } = this.props;
+    const { sort_by } = this.state;
+
+    if (prevProps.topic !== topic) {
+      this.displayArticles(topic);
     }
-
-    render() {
-        const { err, articles } = this.state;
-
-        if (articles.isLoading) return <p>Fetching articles...</p>;
-        if (err) return <ErrorDisplay {...err} />;
-        return (
-        <main className="articles-list">
-            <Sorter selectSortBy={this.selectSortBy}/>
-            {articles.map((article) => {
-                return <ArticleCard key={article.article_id}article={article} />
-            })}
-        </main>
-        );
+    if (prevState.sort_by !== sort_by) {
+      this.displayArticles(topic, sort_by);
     }
+  }
 
-    selectSortBy = (key, value) => {
-        this.setState({ [key]: value });
-    };
+  render() {
+    const { err, articles } = this.state;
 
-    displayArticles = (topic, order, sort_by) => {
-         api.getArticles(topic, order, sort_by)
-        .then(({data}) => {
-            this.setState({articles: data.articles, isLoading: false})
-        })
-        .catch(({status, msg}) => {
-            this.setState({
-              err: { status: status, msg: msg },
-              isLoading: false
-            });
-        })
-    }
+    if (articles.isLoading) return <p>Fetching articles...</p>;
+    if (err) return <ErrorDisplay {...err} />;
+    return (
+      <main className="articles-list">
+        <Sorter selectSortBy={this.selectSortBy} />
+        {articles.map(article => {
+          return <ArticleCard key={article.article_id} article={article} />;
+        })}
+      </main>
+    );
+  }
+
+  selectSortBy = sortby => {
+    this.setState({ sort_by: sortby });
+  };
+
+  displayArticles = (topic, sort_by) => {
+    api
+      .getArticles(topic, sort_by)
+      .then(({ data }) => {
+        this.setState({ articles: data.articles, isLoading: false });
+      })
+      .catch(({ status, msg }) => {
+        this.setState({
+          err: { status: status, msg: msg },
+          isLoading: false
+        });
+      });
+  };
 }
 
 export default ArticlesList;
-
-

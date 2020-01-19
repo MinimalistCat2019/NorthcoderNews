@@ -5,7 +5,9 @@ function Sorter(props) {
     const { selectSortBy } = props;
   
     const handleSorter = e => {
-      selectSortBy(e.target.id, e.target.value);
+      e.preventDefault()
+      selectSortBy(e.target.value);
+
     };
 
     return (
@@ -19,14 +21,6 @@ function Sorter(props) {
           <option value="created_at">Date</option>
           <option value="votes">Votes</option>
           <option value="comment_count">Comments</option>
-        </select>
-        <select
-          onChange={handleSorter}
-          className="sorter"
-          id="order"
-        >
-          <option value="desc">descending</option>
-          <option value="asc">ascending</option>
         </select>
       </form>
     );
