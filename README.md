@@ -1,6 +1,9 @@
 # Northcoder News
-Northcoder News is a social news aggregation, web content rating, and discussion website, not dissimilar [Reddit](https://www.reddit.com/).
-Northcoder News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
+Northcoder News is a social news aggregation, web content rating, and discussion website, along the lines of [Reddit](https://www.reddit.com/).
+
+Northcoder News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. 
+
+Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
 
 ## Links:
 Deployed version: https://paula-northcoder-news.herokuapp.com/
