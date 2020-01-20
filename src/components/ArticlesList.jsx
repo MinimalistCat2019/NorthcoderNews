@@ -9,7 +9,8 @@ class ArticlesList extends Component {
     articles: [],
     isLoading: true,
     sort_by: null,
-    err: null
+    err: null,
+    hasError: false
   };
 
   componentDidMount() {
@@ -19,11 +20,11 @@ class ArticlesList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-   
     const { topic } = this.props;
     const { sort_by } = this.state;
 
     if (prevProps.topic !== topic) {
+      this.setState({err: null})
       this.displayArticles(topic);
     }
     if (prevState.sort_by !== sort_by) {
@@ -32,15 +33,16 @@ class ArticlesList extends Component {
   }
 
   render() {
-    const { err, articles } = this.state;
+    const {err, articles } = this.state;
 
     if (articles.isLoading) return <p>Fetching articles...</p>;
-    if (err) return <ErrorDisplay {...err} />;
+    if (err) return <ErrorDisplay {...err} />
+  
     return (
       <main className="articles-list">
         <Sorter selectSortBy={this.selectSortBy} />
         {articles.map(article => {
-          return <ArticleCard key={article.article_id} article={article} />;
+          return <ArticleCard key={article.article_id} article={article} />
         })}
       </main>
     );
@@ -56,13 +58,14 @@ class ArticlesList extends Component {
       .then(({ data }) => {
         this.setState({ articles: data.articles, isLoading: false });
       })
-      .catch(({ status, msg }) => {
+      .catch(({response}) => {
         this.setState({
-          err: { status: status, msg: msg },
-          isLoading: false
-        });
-      });
-  };
+        err: {status: response.status, msg: "Topic/Route does not exist"}, 
+        isLoading: false,
+        hasError: true
+      })
+    });
+  }
 }
 
 export default ArticlesList;

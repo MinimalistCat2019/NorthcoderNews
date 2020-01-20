@@ -5,15 +5,20 @@ import * as api from '../api';
 class NavBar extends Component {
     
     state = {
-        topics: [], isLoading: true
+        topics: [], 
+        isLoading: true, 
+        err: null
     }
 
     componentDidMount() {
         api.getAllTopics()
         .then((data) => {
-
             this.setState({topics: data.topics, isLoading: false})
         })
+        // .catch(({response}) => {
+        //     this.setState( {
+        //     err: {status: response.status, msg:response.data.msg}})
+        // })
     }
 
     render() {

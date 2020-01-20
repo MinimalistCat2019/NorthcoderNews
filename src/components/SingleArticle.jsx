@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import Comments from './Comments';
 import VoteUpdater from './VoteUpdater';
+import ErrorDisplay from './ErrorDisplay';
 
 
 class SingleArticle extends Component {
-    state = { article:  {}, isLoading: true}
+    state = { article:  {}, isLoading: true, err: null}
 
     componentDidMount() {
         this.displaySingleArticle()
@@ -16,10 +17,13 @@ class SingleArticle extends Component {
     }
     
     render() {
-        const { author, votes, comment_count, article_id, body, title } = this.state.article;
+        const {author, votes, comment_count, article_id, body, title } = this.state.article;
+        const {err} = this.state;
+        
         if (this.state.isLoading) {
             return <p>Fetching article...</p>
         }
+        if (err) return <ErrorDisplay {...err} />
         return (
             <main className="single-article">
                 <h2>{`${title}`}</h2>
@@ -37,7 +41,14 @@ class SingleArticle extends Component {
         return api.getSingleArticle(article_id)
         .then(({data}) => {
             this.setState({article: data.article, isLoading: false});
-        });
+        })
+        .catch(({response}) => {
+            this.setState({
+                err: {status: response.status, 
+                msg: response.data.msg},
+                isLoading: false
+            })
+        })
     };
     
 }

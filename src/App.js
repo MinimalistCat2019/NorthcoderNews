@@ -28,6 +28,7 @@ class App extends Component {
               <SingleArticle path='/articles/:article_id' logged_in_user={this.state.logged_in_user} />
               <TopicPage path='/:topic'/ >
           </Router>
+          <ErrorDisplay default/>
       </main>
     );
     }

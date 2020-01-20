@@ -57,7 +57,7 @@ export const getArticles = (topic, sort_by) => {
     .get(`/articles`, {
       params: {
         topic: topic,
-        sort_by: sort_by
+        sort_by: sort_by,
       }
     })
 }

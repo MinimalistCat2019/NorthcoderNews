@@ -1,9 +1,7 @@
 import React from 'react'
 
-export default function ErrorDisplay() {
+export default function ErrorDisplay(props) {
     return (
-        <div>
-            
-        </div>
+            <h3>{props.status}: {props.msg}</h3>
     )
 }
