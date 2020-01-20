@@ -3,7 +3,7 @@ Northcoder News is a social news aggregation, web content rating, and discussion
 Northcoder News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
 
 ## Links:
-Deployed version: insert link
+Deployed version: https://paula-northcoder-news.herokuapp.com/
 Back-end code: https://github.com/MinimalistCat2019/pw-nc-news
 Front-end code: https://github.com/MinimalistCat/NorthcoderNews
 
