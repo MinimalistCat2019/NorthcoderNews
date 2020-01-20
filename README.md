@@ -1,14 +1,16 @@
 # Northcoder News
 Northcoder News is a social news aggregation, web content rating, and discussion website, along the lines of [Reddit](https://www.reddit.com/).
 
-Northcoder News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. 
+Northcoder News has articles which are divided into topics. Each article can be voted up and down by the user, using the API. 
 
-Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
+Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they themselves have added.
+
+The application is responsive and can be viewed on mobile or laptop, without sacrificing style or functionality.
 
 ## Links:
 Deployed version: https://paula-northcoder-news.herokuapp.com/
-Back-end code: https://github.com/MinimalistCat2019/pw-nc-news
-Front-end code: https://github.com/MinimalistCat/NorthcoderNews
+Backend code: https://github.com/MinimalistCat2019/pw-nc-news
+Frontend code: https://github.com/MinimalistCat/NorthcoderNews
 
 ### Node requirement:
 v12.10.0
