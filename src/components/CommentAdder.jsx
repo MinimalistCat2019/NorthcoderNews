@@ -9,7 +9,6 @@ class CommentAdder extends Component {
     }
 
     render() {
-      // const { err } = this.state;
       if(!this.props.logged_in_user) {
         return <p>Please log in to post a comment</p>
       }

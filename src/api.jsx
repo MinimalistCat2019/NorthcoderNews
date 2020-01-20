@@ -67,9 +67,7 @@ export const getSingleArticle = (article_id) => {
   .get(`/articles/${article_id}`)
   }
 
-// export const getComments = (article_id) => {
-//   // console.log(this.props)
-//   return request
-//   .get(`/articles/${article_id}/comments`).then(({data}) => {
-//       this.setState({comments: data.comments, isLoading: false})
-//   });
+export const getComments = (article_id) => {
+  return request
+  .get(`/articles/${article_id}/comments`)
+}

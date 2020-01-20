@@ -12,11 +12,11 @@ class Comments extends Component {
     }
 
     componentDidMount() {
-        this.getComments()
+        this.displayComments()
     }
 
     componentDidUpdate() {
-      this.getComments()
+      this.displayComments()
     }
     render() {
         const { comments } = this.state
@@ -40,9 +40,9 @@ class Comments extends Component {
         });
       };
 
-    getComments = () => {
-        // console.log(this.props)
-        return axios.get(`https://paula-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`).then(({data}) => {
+    displayComments = () => {
+        api.getComments(this.props.id)
+        .then(({data}) => {
             this.setState({comments: data.comments, isLoading: false})
         });
     }
@@ -52,7 +52,6 @@ class Comments extends Component {
         this.getComments();
       });
     };
-// NB Need to change the key on the json file of endpoints from "articles" to "comments"
 }
 
 export default Comments;

@@ -15,10 +15,10 @@ class NavBar extends Component {
         .then((data) => {
             this.setState({topics: data.topics, isLoading: false})
         })
-        // .catch(({response}) => {
-        //     this.setState( {
-        //     err: {status: response.status, msg:response.data.msg}})
-        // })
+        .catch(({response}) => {
+            this.setState( {
+            err: {status: response.status, msg:response.data.msg}})
+        })
     }
 
     render() {
