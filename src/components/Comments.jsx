@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CommentCard from './CommentCard';
-import axios from 'axios';
 import CommentAdder from './CommentAdder';
 import * as api from '../api';
 
@@ -20,7 +19,7 @@ class Comments extends Component {
     }
     render() {
         const { comments } = this.state
-        if (comments.isLoading) return <p>Fetching comments...</p>
+        if (comments.isLoading) return (<p className="isLoading">Fetching comments...</p>)
         return (
             <main className="Comments">
               <h3>Comments</h3>
@@ -49,7 +48,7 @@ class Comments extends Component {
 
     removeComment = comment_id => {
       api.removeCommentById(comment_id).then(() => {
-        this.getComments();
+        this.displayComments();
       });
     };
 }

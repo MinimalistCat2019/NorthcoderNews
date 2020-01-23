@@ -1,5 +1,4 @@
 import React from "react";
-import * as api from '../api';
 
 function Sorter(props) {
     const { selectSortBy } = props;

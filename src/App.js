@@ -7,6 +7,7 @@ import SingleArticle from './components/SingleArticle';
 import TopicPage from './components/TopicPage';
 import ErrorDisplay from './components/ErrorDisplay';
 import Homepage from './components/Homepage';
+import DesktopNavBar from './components/DesktopNavBar';
 
 class App extends Component {
   state = {logged_in_user: 'grumpy19' }
@@ -19,6 +20,7 @@ class App extends Component {
       <main>
           <header>
               <Header logged_in_user={this.state.logged_in_user}/>
+              <DesktopNavBar path='/' />
           </header>
           <aside className="sidebar">
               <NavBar path='/' />
