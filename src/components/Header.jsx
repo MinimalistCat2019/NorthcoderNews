@@ -1,4 +1,5 @@
 import React from 'react';
+import LoggedInUser from './LoggedInUser';
 
 
 const Header = (props) => {
@@ -6,7 +7,8 @@ const Header = (props) => {
        
         <header>
             <h1>Northcoder News</h1>
-            <p>Welcome, {props.logged_in_user}</p>
+            <LoggedInUser logged_in_user={props.logged_in_user} />
+
         </header>
        
         

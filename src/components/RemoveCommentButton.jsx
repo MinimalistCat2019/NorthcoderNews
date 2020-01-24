@@ -5,7 +5,7 @@ function RemoveCommentButton(props) {
         props.removeComment(props.comment_id)
     }
     return (
-        <button onClick={handleRemove}>
+        <button onClick={handleRemove} className="remove-comment-button">
             Remove Comment
         </button>
     )

@@ -14,10 +14,9 @@ header {
   flex-direction: row;
   align-items: left;
   justify-content: space-between;
-  position: sticky;
   top: 0;
-  color: #F4FFFD;
-  background-color: #ED254E;
+  color: rgb(255, 255, 255);
+  background-color: #ABBAEA;
   padding: rem-calc(10);
 }
 
@@ -31,7 +30,7 @@ header {
   flex-direction: row;
   align-items: center;
   /* justify-content: center; */
-  color: #F4FFFD;
+  color: rgb(255, 255, 255);;
   max-height: 75px;
   /* border: 10px solid #F9DC5C; */
   padding: rem-calc(10);
@@ -45,7 +44,7 @@ header {
   flex-direction: row;
   align-items: center;
   /* justify-content: center; */
-  color: #F4FFFD;
+  color:rgb(255, 255, 255);;
   max-height: 75px;
   /* border: 10px solid #F9DC5C; */
   padding: rem-calc(10);
@@ -53,9 +52,17 @@ header {
   text-decoration: none;
 }
 
+.desktop-menu-item:hover {
+  color: #F9DC5C;
+}
+
+.menu-item:hover {
+  color: #F9DC5C;
+}
+
 .homepage {
   background: mintcream;
-  color: #F9DC5C;;
+  color: #011936;
 }
 
 .menu-item {
@@ -66,7 +73,7 @@ header {
 
 .topic-page {
   background: mintcream;
-  color: #F9DC5C;
+  color: #011936;
 }
 
 .user-welcome {
@@ -84,6 +91,9 @@ header {
   }
   aside {
     display: none;
+  }
+  header {
+    position: sticky;
   }
 }
 
@@ -103,25 +113,69 @@ header {
   text-decoration: none;
 }
 
+.text-link:hover {
+    color: #F9DC5C;
+}
+
 .comment-card {
   background-color:mintcream;
   color:  #011936;
+  border: 1px solid #696773;
 }
 
 .article-card {
   background-color:  mintcream;
   color: #011936;
+  border: 1px solid #696773;
 } 
 
+/* input {
+  min-height: 40px;
+  flex-width: 1;
+  background-color: aqua;
+} */
+
+/* label {
+  float: left;
+} */
+
+.addCommentButton {
+  background-color: #ABBAEA;
+  color:  #011936;
+  padding: rem-calc(10);
+  margin-top: 1rem;
+}
+
+.remove-comment-button {
+  padding: rem-calc(10);
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(255, 255, 255);;
+}
+
+input {
+  width: 100%;
+  min-height: 4rem;
+  box-sizing:border-box;
+}
+
+span {
+  display: block;
+  overflow: hidden;
+}
 
 .upvote {
   background-color: #F9DC5C;
   color: #011936;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .downvote {
-  background-color: #ED254E;
-  color: mintcream;
+  background-color:#ED9EAE;
+  color:  #011936;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -134,7 +188,7 @@ header {
   /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 10px;
-  color: #ED254E;
+  color: #9EB1ED;
   transition: color 0.2s;
 }
 
@@ -164,7 +218,7 @@ header {
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: #ABBAEA;
 }
 
 /* General sidebar styles */
