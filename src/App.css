@@ -106,6 +106,7 @@ header {
   .desktop-menu-item{
     display: none;
   }
+  
 }
 
 .text-link {
@@ -184,8 +185,6 @@ span {
 
 .bm-item {
   display: inline-block;
-
-  /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 10px;
   color: #9EB1ED;
@@ -198,7 +197,8 @@ span {
 } */
 
 .bm-burger-button {
-  position: fixed;
+  position: relative;
+  float: right;
   width: 36px;
   height: 30px;
   left: 36px;
@@ -218,7 +218,7 @@ span {
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #ABBAEA;
+  background: #011936;
 }
 
 /* General sidebar styles */
@@ -226,6 +226,7 @@ span {
   background: mintcream;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  overflow: hidden;
 }
 
 /* Morph shape necessary with bubble or elastic */
