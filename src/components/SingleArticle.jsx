@@ -17,7 +17,7 @@ class SingleArticle extends Component {
     // }
     
     render() {
-        const {author, votes, created_at, article_id, body, title, comments } = this.state.article;
+        const {author, votes, created_at, article_id, body, title} = this.state.article;
         const {err} = this.state;
         
         if (this.state.isLoading) {

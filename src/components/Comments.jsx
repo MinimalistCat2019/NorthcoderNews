@@ -35,8 +35,8 @@ class Comments extends Component {
     }
       
     addNewComment = newComment => {
-        this.setState(currentState => {
-          return { comments: [newComment, ...currentState.comments] };
+        this.setState(prevState => {
+          return { comments: [newComment, ...prevState.comments] };
         });
       };
 
@@ -48,7 +48,8 @@ class Comments extends Component {
     }
 
     removeComment = comment_id => {
-      api.removeCommentById(comment_id).then(() => {
+      api.removeCommentById(comment_id)
+      .then(() => {
         this.displayComments();
       });
     };
