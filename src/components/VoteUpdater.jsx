@@ -13,13 +13,12 @@ class VoteUpdater extends Component {
         return (
             <section>
                 {differenceInVotes <= 0 &&
-                    <button className="upvote"onClick={() => {this.updateVotes(1)}}> 
-                      Vote Up
-                    </button>}
-                {differenceInVotes >=0 && 
-                    <button className="downvote" onClick={() => {this.updateVotes(-1)}}> 
-                      Vote Down
-                    </button> 
+                  <button className="upvote"onClick={() => {this.updateVotes(1)}}> 
+                    Vote Up
+                  </button>}<p>  Votes: {this.props.votes + this.state.differenceInVotes}  </p>{differenceInVotes >=0 && 
+                  <button className="downvote" onClick={() => {this.updateVotes(-1)}}> 
+                    Vote Down
+                  </button> 
                 }
             </section>
         );

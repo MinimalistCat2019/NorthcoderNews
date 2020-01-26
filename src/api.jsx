@@ -71,3 +71,8 @@ export const getComments = (article_id) => {
   return request
   .get(`/articles/${article_id}/comments`)
 }
+
+export const getComment = (article_id, comment_id) => {
+  return request
+  .get(`/articles/${article_id}/comments/${comment_id}`)
+}
