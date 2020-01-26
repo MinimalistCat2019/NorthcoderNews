@@ -6,7 +6,7 @@ const CommentCard = (props) => {
     return (
         <main>
             <section className="comment-card">
-                <p>{props.author}  |  {props.votes} votes  |  created at {props.created_at}</p>
+                <p>{props.author}  posted at {props.created_at}</p>
                 <VoteUpdater comment_id={props.comment_id} votes={props.votes}/>
                 <main>{props.body}</main>
                {props.logged_in_user === props.author && 

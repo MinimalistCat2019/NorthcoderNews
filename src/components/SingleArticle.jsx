@@ -12,12 +12,12 @@ class SingleArticle extends Component {
         this.displaySingleArticle()
     }
 
-    componentDidUpdate() {
-        this.displaySingleArticle()
-    }
+    // componentDidUpdate() {
+    //     this.displaySingleArticle()
+    // }
     
     render() {
-        const {author, votes, comment_count, article_id, body, title } = this.state.article;
+        const {author, votes, created_at, article_id, body, title} = this.state.article;
         const {err} = this.state;
         
         if (this.state.isLoading) {
@@ -27,10 +27,10 @@ class SingleArticle extends Component {
         return (
             <main className="single-article">
                 <h2>{`${title}`}</h2>
-                <p>{`Author: ${author}`} | {`${votes} votes`}  |  {`${comment_count} comments`}</p>
+                <h3>{`Submitted by ${author} on ${created_at}` }</h3>
                 <VoteUpdater article_id={article_id} votes={votes}/>
                 <p>{`${body}`}</p>
-                <Comments id={article_id}  logged_in_user={this.props.logged_in_user}/> 
+                <Comments id={article_id} logged_in_user={this.props.logged_in_user}/> 
             </main>
         );
     }

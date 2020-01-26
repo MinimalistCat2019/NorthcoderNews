@@ -11,16 +11,9 @@ class VoteUpdater extends Component {
     render() {
         const {differenceInVotes} = this.state;
         return (
-            <section>
-                {differenceInVotes <= 0 &&
-                    <button className="upvote"onClick={() => {this.updateVotes(1)}}> 
-                      Vote Up
-                    </button>}
-                {differenceInVotes >=0 && 
-                    <button className="downvote" onClick={() => {this.updateVotes(-1)}}> 
-                      Vote Down
-                    </button> 
-                }
+            <section className="voteBar">
+              <section className="votes">Votes: {this.props.votes + this.state.differenceInVotes} </section>
+              {differenceInVotes <= 0 && <button className="upvote"onClick={() => {this.updateVotes(1)}}> Vote Up </button>}  {differenceInVotes >=0 &&  <button className="downvote" onClick={() => {this.updateVotes(-1)}}> Vote Down </button>}
             </section>
         );
     }
