@@ -13,7 +13,7 @@ When browsing the website, you will be logged in as default user "Grumpy19".
 ## Links:
 Deployed version: https://pwf-nc-news.herokuapp.com/
 
-Backend code: https://github.com/MinimalistCat2019/pw-nc-news
+Backend code: https://github.com/MinimalistCat2019/be-nc-news
 
 Frontend code: https://github.com/MinimalistCat/NorthcoderNews
 
