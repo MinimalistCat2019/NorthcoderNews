@@ -37,6 +37,7 @@ body {
 }
 .homepage {
   color:  rgba(20, 45, 76, 1);
+  background-color: rgba(236, 236, 236, 1);
 }
 .page-header ul {
   display: flex;
@@ -177,7 +178,7 @@ body {
 
 .single-article {
   background-color: rgba(56, 81, 112, 1);
-  color: rgba(6, 6, 5, 1);
+  color: rgba(236, 236, 236, 1);
 }
 
 .addCommentButton {
@@ -224,8 +225,51 @@ span {
   flex-direction: row;
 }
 
+.user-welcome {
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  color: rgba(236, 236, 236, 1);
+  max-height: 75px;
+  /* border: 10px solid #F9DC5C; */
+  padding: rem-calc(10);
+  margin: 30px;
+  text-decoration: none;
+}
 
+.logo {
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(236, 236, 236, 1);
+  max-height: 75px;
+  padding: rem-calc(10);
+  margin: 30px;
+}
 
+.sorter {
+  padding: rem-calc(10);
+  margin: 30px;
+}
+
+.article-body {
+  margin: 20px;
+}
+
+.vote-bar {
+  margin: 20px;
+}
+
+.article-title {
+  margin: 20px;
+}
+
+.submittedBy {
+  margin: 20px;
+}
 /*  navbar styling below */
 
 /* .bm-item {

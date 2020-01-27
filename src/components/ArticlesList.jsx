@@ -41,7 +41,7 @@ class ArticlesList extends Component {
   
     return (
       <main className="articles-list">
-        <Sorter selectSortBy={this.selectSortBy} />
+        <Sorter selectSortBy={this.selectSortBy} className="sorter" />
         {articles.map(article => {
           return <ArticleCard key={article.article_id} article={article} />
         })}

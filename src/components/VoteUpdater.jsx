@@ -12,7 +12,7 @@ class VoteUpdater extends Component {
     render() {
         const {differenceInVotes} = this.state;
         return (
-            <section className="voteBar">
+            <section className="vote-bar">
               {differenceInVotes <= 0 && <button className="upvote"onClick={() => {this.updateVotes(1)}}><Emoji symbol="⬆️" label="like" /></button>}Votes: {this.props.votes + this.state.differenceInVotes}{differenceInVotes >=0 && <button className="downvote" onClick={() => {this.updateVotes(-1)}}><Emoji symbol="⬇️" label="dislike" /></button>}
             </section>
         );
