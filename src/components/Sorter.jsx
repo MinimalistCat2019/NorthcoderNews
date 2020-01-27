@@ -10,7 +10,7 @@ function Sorter(props) {
     };
 
     return (
-        <form className="articleSortOrderSelectForm">
+        <form className="form">
         Sort by{" "}
         <select
           onChange={handleSorter}

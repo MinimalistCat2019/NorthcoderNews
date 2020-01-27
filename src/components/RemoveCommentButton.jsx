@@ -5,9 +5,14 @@ function RemoveCommentButton(props) {
         props.removeComment(props.comment_id)
     }
     return (
-        <button onClick={handleRemove} className="remove-comment-button">
-            Remove Comment
-        </button>
+        <div>
+            <button onClick={handleRemove} className="small-remove-comment-button">
+                Remove Comment
+            </button>
+            <button onClick={handleRemove} className="remove-comment-button">
+                Remove Comment
+            </button>
+        </div>
     )
 }
 

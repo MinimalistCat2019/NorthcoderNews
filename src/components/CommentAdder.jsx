@@ -13,7 +13,7 @@ class CommentAdder extends Component {
         return <p>Please log in to post a comment</p>
       }
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <label>
               Comment as {this.props.logged_in_user}:
               <input 
@@ -24,7 +24,7 @@ class CommentAdder extends Component {
               </input>
           </label>
           <button className="addCommentButton">Add Comment</button>
-        
+          <button className="small-addCommentButton">Add Comment</button>
         </form>
         )
     }

@@ -23,7 +23,7 @@ class Comments extends Component {
         if (comments.isLoading) return (<p className="isLoading">Fetching comments...</p>)
         return (
             <main className="Comments">
-              <h3>Comments: {comments.length}</h3>
+              <h3 className="comments-title">Comments: {comments.length}</h3>
               <CommentAdder logged_in_user={this.props.logged_in_user} article_id={this.props.id} addNewComment={this.addNewComment}/>
               <section>
                   {this.state.comments.map((comment) => {
