@@ -143,10 +143,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
   color: rgba(159, 211, 199, 1);
   max-height: 75px;
-  /* border: 10px solid #F9DC5C; */
   padding: rem-calc(10);
   margin: 10px;
   text-decoration: none;
@@ -157,10 +155,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
   color:  rgba(159, 211, 199, 1);
   max-height: 75px;
-  /* border: 10px solid #F9DC5C; */
   padding: rem-calc(10);
   margin: 10px;
   text-decoration: none;
@@ -237,24 +233,20 @@ input {
 }
 
 span {
-  /* display: block; */
   overflow: hidden;
 }
 
 .votebar {
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
   max-height: 75px;
 }
 .upvote {
-  /* background-color:mintcream; */
   display: flex;
   flex-direction: row;
 }
 
 .downvote {
-  /* background-color:mintcream; */
   display: flex;
   flex-direction: row;
 }
@@ -264,10 +256,8 @@ span {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
   color: rgba(236, 236, 236, 1);
   max-height: 75px;
-  /* border: 10px solid #F9DC5C; */
   padding: rem-calc(10);
   margin: 30px;
   text-decoration: none;
@@ -328,65 +318,3 @@ span {
 .submittedBy {
   margin: 20px;
 }
-/*  navbar styling below */
-
-/* .bm-item {
-  display: inline-block;
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: #9EB1ED;
-  transition: color 0.2s;
-} */
-
-/* Change color on hover */
-/* .bm-item:hover {
-  color: #F9DC5C;
-} */
-
-/* .bm-burger-button {
-  position: relative;
-  float: right;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
-} */
-
-/* Color/shape of burger icon bars */
-/* .bm-burger-bars {
-  background: #F9DC5C;
-} */
-
-/* Position and sizing of clickable cross button */
-/* .bm-cross-button {
-  height: 24px;
-  width: 24px;
-} */
-
-/* Color/shape of close button cross */
-/* .bm-cross {
-  background: #011936;
-} */
-
-/* General sidebar styles */
-/* .bm-menu {
-  background: mintcream;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-  overflow: hidden;
-} */
-
-/* Morph shape necessary with bubble or elastic */
-/* .bm-morph-shape {
-  fill: mintcream;
-} */
-
-/* Wrapper for item list */
-/* .bm-item-list {
-  color: mintcream;
-} */
-
-/* Styling of overlay */
-/* .bm-overlay {
-  background: mintcream;
-} */
