@@ -24,14 +24,18 @@ v12.9.0
 Install the following dependencies with 
 ```
 npm i
-
 ```
 
 @reach/router v1.2.1
+
 a11y-react-emoji v1.1.2
+
 axios  v0.19.2
+
 react v16.12.0
+
 react-dom v16.12.0
+
 react-scripts v3.3.0
 
 #### To run localy:
