@@ -11,10 +11,6 @@ class SingleArticle extends Component {
     componentDidMount() {
         this.displaySingleArticle()
     }
-
-    // componentDidUpdate() {
-    //     this.displaySingleArticle()
-    // }
     
     render() {
         const {author, votes, created_at, article_id, body, title} = this.state.article;
