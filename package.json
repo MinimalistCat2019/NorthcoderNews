@@ -7,6 +7,7 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "a11y-react-emoji": "^1.1.2",
     "axios": "^0.19.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
