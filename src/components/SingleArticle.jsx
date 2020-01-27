@@ -11,10 +11,6 @@ class SingleArticle extends Component {
     componentDidMount() {
         this.displaySingleArticle()
     }
-
-    // componentDidUpdate() {
-    //     this.displaySingleArticle()
-    // }
     
     render() {
         const {author, votes, created_at, article_id, body, title} = this.state.article;
@@ -26,10 +22,10 @@ class SingleArticle extends Component {
         if (err) return <ErrorDisplay {...err} />
         return (
             <main className="single-article">
-                <h2>{`${title}`}</h2>
-                <h3>{`Submitted by ${author} on ${created_at}` }</h3>
+                <h2 className="article-title">{`${title}`}</h2>
+                <h3 className="submittedBy">{`Submitted by ${author} on ${created_at}` }</h3>
                 <VoteUpdater article_id={article_id} votes={votes}/>
-                <p>{`${body}`}</p>
+                <p className="article-body">{`${body}`}</p>
                 <Comments id={article_id} logged_in_user={this.props.logged_in_user}/> 
             </main>
         );

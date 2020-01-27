@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
+import Emoji from './Emoji';
 
 
 class VoteUpdater extends Component {
@@ -11,9 +12,8 @@ class VoteUpdater extends Component {
     render() {
         const {differenceInVotes} = this.state;
         return (
-            <section className="voteBar">
-              <section className="votes">Votes: {this.props.votes + this.state.differenceInVotes} </section>
-              {differenceInVotes <= 0 && <button className="upvote"onClick={() => {this.updateVotes(1)}}> Vote Up </button>}  {differenceInVotes >=0 &&  <button className="downvote" onClick={() => {this.updateVotes(-1)}}> Vote Down </button>}
+            <section className="vote-bar">
+              {differenceInVotes <= 0 && <button className="upvote"onClick={() => {this.updateVotes(1)}}><Emoji symbol="⬆️" label="like" /></button>}Votes: {this.props.votes + this.state.differenceInVotes}{differenceInVotes >=0 && <button className="downvote" onClick={() => {this.updateVotes(-1)}}><Emoji symbol="⬇️" label="dislike" /></button>}
             </section>
         );
     }

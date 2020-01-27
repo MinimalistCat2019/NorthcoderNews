@@ -1,0 +1,230 @@
+
+  #App {
+    font-family: sans-serif;
+    height: 100vh;
+  }
+  
+  main {
+    margin: 20px;
+    padding: rem-calc(10);
+    /* border: 1px solid #F9DC5C; */
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-between;
+    top: 0;
+    color: rgb(255, 255, 255);
+    background-color: #ABBAEA;
+    padding: rem-calc(10);
+  }
+  
+  /* aside {
+    position: sticky;
+  } */
+  
+  .desktop-menu-item {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    color: rgb(255, 255, 255);;
+    max-height: 75px;
+    /* border: 10px solid #F9DC5C; */
+    padding: rem-calc(10);
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  .menu-item {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    color:rgb(255, 255, 255);;
+    max-height: 75px;
+    /* border: 10px solid #F9DC5C; */
+    padding: rem-calc(10);
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  .desktop-menu-item:hover {
+    color: #F9DC5C;
+  }
+  
+  .menu-item:hover {
+    color: #F9DC5C;
+  }
+  
+  .homepage {
+    background: mintcream;
+    color: #011936;
+  }
+  
+  .topic-page {
+    background: mintcream;
+    color: #011936;
+  }
+  
+  .user-welcome {
+    margin: 20px;
+  }
+  
+  .single-article {
+    background: mintcream;
+  }
+  
+  @media (min-width: 501px) {
+    .main  {
+      display:flex;
+      justify-content: space-between;
+    }
+    aside {
+      display: none;
+    }
+    header {
+      position: sticky;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .main, header, aside, .homepage, .topic-slug, .topic-page, .single-article {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .desktop-menu-item{
+      display: none;
+    }
+    
+  }
+  
+  .text-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .text-link:hover {
+      color: #F9DC5C;
+  }
+  
+  .comment-card {
+    background-color:mintcream;
+    color:  #011936;
+    border: 1px solid #696773;
+  }
+  
+  .article-card {
+    background-color:  mintcream;
+    color: #011936;
+    border: 1px solid #696773;
+  } 
+  
+  .addCommentButton {
+    background-color: #ABBAEA;
+    color:  #011936;
+    padding: rem-calc(10);
+    margin-top: 1rem;
+  }
+  
+  .remove-comment-button {
+    padding: rem-calc(10);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 255, 255);;
+  }
+  
+  input {
+    width: 100%;
+    min-height: 4rem;
+    box-sizing:border-box;
+  }
+  
+  span {
+    display: block;
+    overflow: hidden;
+  }
+  
+  .upvote {
+    background-color: #F9DC5C;
+    color: #011936;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .downvote {
+    background-color:#ED9EAE;
+    color:  #011936;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  
+  
+  /*  navbar styling below */
+  
+  .bm-item {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #9EB1ED;
+    transition: color 0.2s;
+  }
+  
+  /* Change color on hover */
+  /* .bm-item:hover {
+    color: #F9DC5C;
+  } */
+  
+  .bm-burger-button {
+    position: relative;
+    float: right;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #F9DC5C;
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #011936;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background: mintcream;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    overflow: hidden;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: mintcream;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: mintcream;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    background: mintcream;
+  }
